@@ -312,6 +312,87 @@ body {
   transform: scale(1.02);
 }
 
+/* Features Section */
+.features {
+  padding: 6rem 1.5rem;
+  background-color: var(--surface-container-lowest);
+}
+
+.features__container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.features__header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+
+.features__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--on-background);
+  margin: 0 0 1rem;
+  letter-spacing: var(--tracking-tight);
+}
+
+.features__description {
+  font-size: 1.125rem;
+  color: var(--outline);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.features__card {
+  background-color: var(--surface);
+  border: 1px solid var(--surface-variant);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 15px 35px -5px color-mix(in srgb, var(--on-background) 10%, transparent),
+              0 5px 15px -5px color-mix(in srgb, var(--on-background) 5%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--primary-container) 10%, transparent);
+  color: var(--primary-container);
+  margin-bottom: 0.5rem;
+}
+
+.features__icon {
+  font-size: 1.75rem;
+  font-variation-settings: 'FILL' 0;
+}
+
+.features__card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--on-background);
+  margin: 0;
+}
+
+.features__card-description {
+  font-size: 0.9375rem;
+  color: var(--outline);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Comparison Section */
 .comparison {
   padding: 6rem 1.5rem;
@@ -465,6 +546,19 @@ body {
 
   .hero__description {
     text-align: center;
+  }
+
+  /* Features Section */
+  .features {
+    padding: 3rem 1.5rem;
+  }
+  
+  .features__title {
+    font-size: 1.75rem;
+  }
+  
+  .features__header {
+    margin-bottom: 2.5rem;
   }
 
   /* Comparison Section */
