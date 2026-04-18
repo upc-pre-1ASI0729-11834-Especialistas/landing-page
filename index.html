@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="#" class="navbar__brand">
+        <span class="material-symbols-outlined navbar__icon">science</span>
+        SafeLab
+      </a>
+
+      <!-- Mobile Toggle Button -->
+      <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <!-- Collapsible Container for Menu and Actions -->
+      <div class="navbar__collapse" id="navbarCollapse">
+        <div class="navbar__menu">
+          <a href="#caracteristicas" class="navbar__link">Características</a>
+          <a href="#solucion" class="navbar__link">Solución</a>
+          <a href="#precios" class="navbar__link">Precios</a>
+        </div>
+        <div class="navbar__actions">
+          <a href="#" class="btn btn--secondary">Iniciar Sesión</a>
+          <a href="#" class="btn btn--primary">Registrate</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
