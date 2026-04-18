@@ -1,0 +1,49 @@
+/* Variables */
+:root {
+  /* Colors */
+  --primary: #006a62;
+  --primary-container: #00d1c1;
+  --on-background: #0d1c32;
+  --error: #ba1a1a;
+  --surface: #ffffff;
+  --surface-dim: #f8f9fa;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f8f9fa;
+  --surface-container: #f1f3f5;
+  --on-surface: #0d1c32;
+  --on-primary-fixed: #ffffff;
+  --primary-fixed: #006a62;
+  --outline: #6c757d;
+  --outline-variant: #adb5bd;
+  --surface-variant: #e9ecef;
+  --tertiary: #ffc107;
+
+  /* Typography */
+  --font-inter: 'Inter', sans-serif;
+  --tracking-tight: -0.02em;
+
+  /* Spacing */
+  --space-list-sm: 8px;
+  --space-list-md: 12px;
+
+  /* Components: Borders & Radius */
+  --radius-xl: 0.75rem;
+
+  /* Glassmorphism */
+  --modal-bg-alpha: rgba(255, 255, 255, 0.7);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background-color: var(--surface);
+  color: var(--on-background);
+}
