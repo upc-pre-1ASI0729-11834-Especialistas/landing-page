@@ -336,7 +336,7 @@ body {
 }
 
 .comparison__card--problem {
-  background-color: var(--on-background);
+  background-color: color-mix(in srgb, var(--on-background) 92%, transparent);
   color: var(--surface);
   border-top-left-radius: var(--radius-xl);
   border-bottom-left-radius: var(--radius-xl);
