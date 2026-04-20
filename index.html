@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
   <link rel="stylesheet" href="css/style.css">
@@ -68,8 +72,19 @@
 
         <!-- Hero Image Content -->
         <div class="hero__image-wrapper">
-          <div class="hero__image-container">
-            <img src="images/dashboard.png" alt="Dashboard de SafeLab" class="hero__image">
+          <div class="hero__carousel" id="heroCarousel">
+            <div class="hero__carousel-track">
+              <div class="hero__carousel-slide">
+                <img src="images/app screen 1.png" alt="Dashboard de SafeLab" class="hero__image">
+              </div>
+              <div class="hero__carousel-slide">
+                <img src="images/desktop.png" alt="Vista de escritorio" class="hero__image">
+              </div>
+              <div class="hero__carousel-slide">
+                <img src="images/app screen 2.png" alt="Pantalla de la app" class="hero__image">
+              </div>
+            </div>
+            <div class="hero__carousel-dots" id="carouselDots"></div>
           </div>
         </div>
       </div>

@@ -1,22 +1,25 @@
 /* Variables */
 :root {
-  /* Colors */
-  --primary: #006a62;
-  --primary-container: #00d1c1;
-  --on-background: #0d1c32;
-  --error: #ba1a1a;
-  --surface: #ffffff;
+  /* Colors*/
+  --text-main: #0F172A;
+  --text-highlight: #4F46E5;
+  --text-focus: #3B82F6;
+
+  --bg-normal: #FFFFFF;
+  --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --gradient-bg: linear-gradient(135deg, #F0F4FF 0%, #F8FAFC 50%, #F3F0FF 100%);
+
+  --error: #EF4444;
+  --surface: var(--bg-normal);
   --surface-dim: #f8f9fa;
-  --surface-container-lowest: #ffffff;
+  --surface-container-lowest: var(--bg-normal);
   --surface-container-low: #f8f9fa;
   --surface-container: #f1f3f5;
-  --on-surface: #0d1c32;
-  --on-primary-fixed: #ffffff;
-  --primary-fixed: #006a62;
-  --outline: #6c757d;
-  --outline-variant: #adb5bd;
-  --surface-variant: #e9ecef;
-  --tertiary: #ffc107;
+  --on-surface: var(--text-main);
+  --on-background: var(--text-main);
+  --outline: #334155;
+  --outline-variant: #cbd5e1;
+  --surface-variant: #e2e8f0;
 
   /* Typography */
   --font-inter: 'Inter', sans-serif;
@@ -55,10 +58,10 @@ body {
   top: 0;
   width: 100%;
   z-index: 50;
-  background-color: color-mix(in srgb, var(--on-background) 90%, transparent);
+  background-color: color-mix(in srgb, var(--surface) 90%, transparent);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--primary-container) 10%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--text-focus) 5%, transparent);
 }
 
 .navbar__container {
@@ -75,15 +78,22 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--surface);
+  color: var(--text-main);
   text-decoration: none;
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.05em;
 }
 
 .navbar__icon {
-  color: var(--primary-container);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--gradient-primary);
+  color: var(--bg-normal);
+  border-radius: var(--radius-lg);
   font-variation-settings: 'FILL' 1;
 }
 
@@ -91,7 +101,7 @@ body {
   display: none;
   background: none;
   border: none;
-  color: var(--surface);
+  color: var(--text-main);
   cursor: pointer;
   padding: 0.25rem;
 }
@@ -111,7 +121,7 @@ body {
 }
 
 .navbar__link {
-  color: var(--surface-variant);
+  color: color-mix(in srgb, var(--text-main) 70%, transparent);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
@@ -121,8 +131,8 @@ body {
 }
 
 .navbar__link:hover {
-  color: var(--surface);
-  background-color: color-mix(in srgb, var(--surface) 5%, transparent);
+  color: var(--text-main);
+  background-color: color-mix(in srgb, var(--text-main) 5%, transparent);
 }
 
 .navbar__actions {
@@ -150,33 +160,32 @@ body {
 }
 
 .btn--primary {
-  background-color: var(--primary-container);
-  color: color-mix(in srgb, var(--on-background) 90%, transparent);
+  background: var(--gradient-primary);
+  color: var(--surface);
   padding: 0.625rem 1.25rem;
   font-weight: 600;
 }
 
 .btn--primary:hover {
-  background-color: color-mix(in srgb, var(--primary-container) 90%, transparent);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--primary-container) 30%, transparent);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--text-focus) 40%, transparent);
+  transform: translateY(-1px);
 }
 
 .btn--secondary {
   background-color: transparent;
-  color: var(--surface-variant);
-  font-weight: 700;
+  color: var(--outline);
+  font-weight: 600;
   padding: 0.625rem 1.25rem;
-  border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-main) 20%, transparent);
 }
 
 .btn--secondary:hover {
-  color: var(--surface);
+  background-color: color-mix(in srgb, var(--text-main) 5%, transparent);
 }
 
 /* Typography Utilities */
 .text-primary {
-  background-clip: text;
-  color: var(--primary-container);
+  color: var(--text-highlight);
 }
 
 /* Button variants & modifiers */
@@ -200,7 +209,7 @@ body {
   padding-top: 8rem;
   padding-bottom: 4rem;
   overflow: hidden;
-  background-color: color-mix(in srgb, var(--on-background) 92%, transparent);
+  background: var(--gradient-bg);
   position: relative;
 }
 
@@ -213,7 +222,7 @@ body {
   transform: translateX(-50%);
   width: 800px;
   height: 600px;
-  background-color: color-mix(in srgb, var(--primary-container) 20%, transparent);
+  background-color: color-mix(in srgb, var(--text-focus) 15%, transparent);
   filter: blur(120px);
   border-radius: 50%;
   pointer-events: none;
@@ -222,8 +231,7 @@ body {
 
 .hero__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 0.8fr 1.2fr;
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
@@ -244,12 +252,12 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.375rem 1rem;
-  background-color: color-mix(in srgb, var(--surface-container-low) 10%, transparent);
-  color: var(--primary-container);
+  background-color: color-mix(in srgb, var(--text-focus) 10%, transparent);
+  color: var(--text-focus);
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid color-mix(in srgb, var(--outline-variant) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-focus) 20%, transparent);
 }
 
 .hero__badge-icon {
@@ -260,7 +268,7 @@ body {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  color: var(--surface);
+  color: var(--text-main);
   margin: 0;
   letter-spacing: var(--tracking-tight);
 }
@@ -268,7 +276,7 @@ body {
 .hero__description {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--surface-variant);
+  color: color-mix(in srgb, var(--text-main) 70%, transparent);
   max-width: 32rem;
   margin: 0;
 }
@@ -280,36 +288,77 @@ body {
   flex-wrap: wrap;
 }
 
-/* Hero Image area */
+/* Hero Carousel */
 .hero__image-wrapper {
   position: relative;
   width: 100%;
 }
 
-.hero__image-container {
-  background-color: color-mix(in srgb, var(--surface) 5%, transparent);
-  border: 1px solid color-mix(in srgb, var(--surface) 10%, transparent);
-  border-radius: var(--radius-xl);
-  padding: 1rem;
+.hero__carousel {
+  position: relative;
+  width: 100%;
   overflow: hidden;
-  box-shadow: 0 0 40px color-mix(in srgb, var(--primary) 20%, transparent);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.hero__carousel-track {
+  display: flex;
+  height: 500px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero__carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  padding: 0 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  opacity: 0.9;
-  mix-blend-mode: luminosity;
-  transition: transform 0.5s ease;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--text-focus) 15%, transparent);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
-.hero__image-container:hover .hero__image {
-  transform: scale(1.02);
+.hero__carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero__carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  background-color: color-mix(in srgb, var(--text-main) 20%, transparent);
+  cursor: pointer;
+  transition: all 0.35s ease;
+  padding: 0;
+}
+
+.hero__carousel-dot:hover {
+  background-color: color-mix(in srgb, var(--text-focus) 50%, transparent);
+}
+
+.hero__carousel-dot.is-active {
+  width: 28px;
+  background: var(--gradient-primary);
 }
 
 /* Features Section */
@@ -332,7 +381,7 @@ body {
 .features__title {
   font-size: 2.25rem;
   font-weight: 800;
-  color: var(--on-background);
+  color: var(--text-main);
   margin: 0 0 1rem;
   letter-spacing: var(--tracking-tight);
 }
@@ -355,8 +404,7 @@ body {
   border: 1px solid var(--surface-variant);
   border-radius: var(--radius-xl);
   padding: 2.5rem 2rem;
-  box-shadow: 0 15px 35px -5px color-mix(in srgb, var(--on-background) 10%, transparent),
-    0 5px 15px -5px color-mix(in srgb, var(--on-background) 5%, transparent);
+  box-shadow: 0 10px 30px -5px color-mix(in srgb, var(--text-main) 5%, transparent);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -375,8 +423,8 @@ body {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: var(--radius-lg);
-  background-color: color-mix(in srgb, var(--primary-container) 10%, transparent);
-  color: var(--primary-container);
+  background-color: color-mix(in srgb, var(--text-focus) 10%, transparent);
+  color: var(--text-focus);
   flex-shrink: 0;
 }
 
@@ -388,7 +436,7 @@ body {
 .features__card-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--on-background);
+  color: var(--text-main);
   margin: 0;
 }
 
@@ -411,8 +459,7 @@ body {
   max-width: 80rem;
   margin: 0 auto;
   border-radius: var(--radius-xl);
-  box-shadow: 0 25px 50px color-mix(in srgb, var(--on-background) 15%, transparent),
-    0 10px 25px color-mix(in srgb, var(--on-background) 8%, transparent);
+  box-shadow: 0 25px 50px color-mix(in srgb, var(--text-main) 10%, transparent);
 }
 
 .comparison__card {
@@ -423,19 +470,24 @@ body {
 }
 
 .comparison__card--problem {
-  background-color: color-mix(in srgb, var(--on-background) 92%, transparent);
-  color: var(--surface);
+  background-color: white;
+  color: var(--text-main);
+  border: 1px solid color-mix(in srgb, var(--error) 20%, transparent);
+  border-top: 8px solid var(--error);
   border-top-left-radius: var(--radius-xl);
   border-bottom-left-radius: var(--radius-xl);
+  border-right: none;
 }
 
 .comparison__card--solution {
   background-color: var(--surface);
-  color: var(--on-background);
-  border: 1px solid color-mix(in srgb, var(--outline-variant) 30%, transparent);
+  color: var(--text-main);
+  border: 1px solid color-mix(in srgb, var(--text-focus) 30%, transparent);
   border-left: none;
   border-top-right-radius: var(--radius-xl);
   border-bottom-right-radius: var(--radius-xl);
+  box-shadow: -10px 0 30px color-mix(in srgb, var(--text-focus) 5%, transparent);
+  z-index: 1;
 }
 
 .comparison__header {
@@ -453,7 +505,11 @@ body {
 }
 
 .comparison__icon--success {
-  color: var(--primary-container);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-variation-settings: 'FILL' 1;
 }
 
@@ -489,13 +545,18 @@ body {
   color: color-mix(in srgb, currentColor 90%, transparent);
 }
 
+image {
+  image-rendering: high-quality !important;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .comparison__list-icon {
   font-size: 1.25rem;
   margin-top: 0.125rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .navbar__toggle {
     display: block;
   }
@@ -508,7 +569,7 @@ body {
     margin-left: 0;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid color-mix(in srgb, var(--surface) 10%, transparent);
+    border-top: 1px solid color-mix(in srgb, var(--surface-variant) 50%, transparent);
     gap: 1.5rem;
   }
 
@@ -582,11 +643,14 @@ body {
 
   .comparison__card--problem {
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-right: 1px solid color-mix(in srgb, var(--error) 20%, transparent);
+    border-bottom: none;
   }
 
   .comparison__card--solution {
     border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-    border-left: 1px solid color-mix(in srgb, var(--outline-variant) 30%, transparent);
+    border-left: 1px solid color-mix(in srgb, var(--text-focus) 30%, transparent);
     border-top: none;
+    box-shadow: 0 -10px 30px color-mix(in srgb, var(--text-focus) 5%, transparent);
   }
 }
