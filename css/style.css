@@ -319,7 +319,7 @@ body {
 .hero__carousel-slide {
   flex: 0 0 100%;
   height: 100%;
-  padding: 0 12%;
+  padding: 0 5%;
   display: flex;
   justify-content: center;
   align-items: center;
