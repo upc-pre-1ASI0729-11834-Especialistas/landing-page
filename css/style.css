@@ -661,9 +661,11 @@ image {
   flex-shrink: 0;
 }
 
-.testimonials__avatar-icon {
-  font-size: 1.5rem;
-  font-variation-settings: 'FILL' 0;
+.testimonials__avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .testimonials__author-info {
