@@ -16,7 +16,7 @@ toggle.addEventListener('click', () => {
 
   let current = 0;
   let interval;
-  const DELAY = 4000;
+  const DELAY = 2000;
 
   // Create dots dynamically based on slide count
   slides.forEach((_, i) => {
