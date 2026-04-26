@@ -1089,19 +1089,16 @@ image {
   border-top: 1px solid color-mix(in srgb, var(--surface) 10%, transparent);
   padding-top: 1.5rem;
 }
-
 .footer__copyright {
   color: color-mix(in srgb, var(--surface) 40%, transparent);
   font-size: 0.75rem;
   margin: 0;
 }
-
 @media (max-width: 968px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-
   .footer__col--brand {
     grid-column: 1 / -1;
   }
