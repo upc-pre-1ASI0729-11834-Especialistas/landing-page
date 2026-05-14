@@ -22,26 +22,46 @@
         SafeLab
       </a>
 
-      <!-- Mobile Toggle Button -->
-      <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-
-      <!-- Collapsible Container for Menu and Actions -->
-      <div class="navbar__collapse" id="navbarCollapse">
+      <!-- Desktop Top Menu -->
+      <div class="navbar__desktop-menu">
         <div class="navbar__menu">
-          <a href="#caracteristicas" class="navbar__link" data-i18n="nav.features">Features</a>
-          <a href="#solucion" class="navbar__link" data-i18n="nav.solution">Solution</a>
-          <a href="#testimonios" class="navbar__link" data-i18n="nav.testimonials">Testimonials</a>
-          <a href="#equipo" class="navbar__link" data-i18n="nav.team">Team</a>
-          <a href="#precios" class="navbar__link" data-i18n="nav.pricing">Pricing</a>
+          <a href="#caracteristicas" class="navbar__link hide-on-915" data-i18n="nav.features">Features</a>
+          <a href="#solucion" class="navbar__link hide-on-915" data-i18n="nav.solution">Solution</a>
+          <a href="#testimonios" class="navbar__link hide-on-1050" data-i18n="nav.testimonials">Testimonials</a>
+          <a href="#equipo" class="navbar__link hide-on-1190" data-i18n="nav.team">Team</a>
+          <a href="#precios" class="navbar__link hide-on-1190" data-i18n="nav.pricing">Pricing</a>
         </div>
         <div class="navbar__actions">
-          <!-- Language Toggle -->
-          <div class="lang-toggle">
+          <div class="lang-toggle lang-toggle--desktop">
             <button class="lang-toggle__btn is-active" data-lang="en">EN</button>
             <button class="lang-toggle__btn" data-lang="es">ES</button>
           </div>
+          <a href="#" class="btn btn--secondary hide-on-915" data-i18n="nav.login">Login</a>
+          <a href="#" class="btn btn--primary hide-on-915" data-i18n="nav.register">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Mobile Controls (Language + Hamburger) -->
+      <div class="navbar__mobile-controls">
+        <div class="lang-toggle lang-toggle--mobile">
+          <button class="lang-toggle__btn is-active" data-lang="en">EN</button>
+          <button class="lang-toggle__btn" data-lang="es">ES</button>
+        </div>
+        <button class="navbar__toggle show-on-1190" id="navbarToggle" aria-label="Abrir menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div class="navbar__collapse" id="navbarCollapse">
+        <div class="navbar__menu">
+          <a href="#caracteristicas" class="navbar__link show-on-915" data-i18n="nav.features">Features</a>
+          <a href="#solucion" class="navbar__link show-on-915" data-i18n="nav.solution">Solution</a>
+          <a href="#testimonios" class="navbar__link show-on-1050" data-i18n="nav.testimonials">Testimonials</a>
+          <a href="#equipo" class="navbar__link show-on-1190" data-i18n="nav.team">Team</a>
+          <a href="#precios" class="navbar__link show-on-1190" data-i18n="nav.pricing">Pricing</a>
+        </div>
+        <div class="navbar__actions show-on-915">
           <a href="#" class="btn btn--secondary" data-i18n="nav.login">Login</a>
           <a href="#" class="btn btn--primary" data-i18n="nav.register">Sign Up</a>
         </div>
