@@ -408,6 +408,45 @@ body {
   background: var(--gradient-primary);
 }
 
+/* About the Product Section */
+.about-the-product {
+  padding: 6rem 1.5rem;
+  padding-top: 0rem;
+}
+
+.about-the-product__container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.about-the-product__header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+}
+
+.about-the-product__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 1rem;
+  letter-spacing: var(--tracking-tight);
+}
+
+.about-the-product__description {
+  font-size: 1.125rem;
+  color: var(--outline);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-the-product__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* Features Section */
 .features {
   padding: 2rem 1.5rem;
@@ -944,6 +983,30 @@ image {
     margin-bottom: 2.5rem;
   }
 
+  /*About the Product Section */
+  .about-the-product {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-the-product__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-the-product__title {
+    font-size: 1.75rem;
+  }
+
+  .about-the-product__description {
+    text-align: center;
+  }
+
+  .about-the-product__video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 40px color-mix(in srgb, var(--text-focus) 15%, transparent);
+  }
+
   /* Comparison Section */
   .comparison {
     padding: 0rem 1.5rem;
@@ -1266,4 +1329,4 @@ image {
   background: var(--gradient-primary);
   color: var(--surface);
   box-shadow: 0 4px 12px color-mix(in srgb, var(--text-focus) 30%, transparent);
-}
+}
