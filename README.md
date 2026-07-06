@@ -1,1 +1,1 @@
-﻿# SafeLab Landing  Page
+﻿# SafeLab Landing Page
